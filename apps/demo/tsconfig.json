@@ -1,0 +1,6 @@
+{
+  "extends": "../web/tsconfig.json",
+  "compilerOptions": { "plugins": [], "paths": { "@/*": ["../web/src/*"], "next/link": ["./src/link.tsx"], "next/navigation": ["./src/navigation.ts"] } },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "vite.config.ts"],
+  "exclude": ["dist", "node_modules"]
+}

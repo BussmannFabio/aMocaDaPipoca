@@ -1,0 +1,10 @@
+name = "frontend"
+description = "Implementa a jornada do cliente e o painel responsivo com acessibilidade e estados claros."
+developer_instructions = """
+Leia AGENTS.md e agents/roles/frontend.md antes de trabalhar.
+Consulte docs/PRD.md, docs/ARQUITETURA.md, docs/TESTES_ACEITE.md e a tarefa.
+Edite somente páginas/componentes/testes atribuídos e consuma os contratos
+do servidor. Cubra erro, vazio, pendência e retomada; valide mobile e teclado.
+Não aprove pagamento, escreva capacidade ou confie em totais do navegador.
+Registre evidências de interação usando agents/templates/ENTREGA.md.
+"""

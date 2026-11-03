@@ -1,0 +1,43 @@
+{
+  "name": "a-moca-da-pipoca",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.25.0",
+  "engines": { "node": ">=22.18.0 <27" },
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "start": "node scripts/dev.mjs --production",
+    "build": "pnpm --filter @pipoca/web build",
+    "lint": "eslint apps/web/src apps/demo/src scripts tests --no-warn-ignored",
+    "typecheck": "node scripts/typecheck.mjs",
+    "test": "tsx --test tests/unit/*.test.ts",
+    "test:integration": "tsx --test --test-concurrency=1 tests/integration/*.test.ts",
+    "test:e2e": "playwright test",
+    "db:start": "node scripts/database.mjs start",
+    "db:stop": "node scripts/database.mjs stop",
+    "db:reset": "node scripts/database.mjs reset",
+    "db:migrate": "node scripts/database.mjs migrate",
+    "mailbox": "node scripts/mailbox.mjs",
+    "demo:orders": "tsx scripts/demo_orders.ts",
+    "pages:build": "pnpm --filter @pipoca/demo build",
+    "pages:preview": "pnpm --filter @pipoca/demo preview",
+    "test:pages": "playwright test -c playwright.pages.config.ts",
+    "reservations:expire": "tsx scripts/jobs.ts expire",
+    "payments:reconcile": "tsx scripts/jobs.ts reconcile"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "@types/node": "22.18.0",
+    "@types/pg": "8.23.1",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "dotenv": "18.0.9",
+    "embedded-postgres": "18.6.0-beta.19",
+    "eslint": "9.39.4",
+    "eslint-config-next": "16.4.4",
+    "pg": "8.23.1",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3"
+  }
+}

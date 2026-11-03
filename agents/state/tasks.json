@@ -1,0 +1,353 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-11-03",
+  "project": "Central de Encomendas - A Moça da Pipoca",
+  "scope": "MVP 1 local mockado + demonstração estática Pages; catálogo público e login ao personalizar",
+  "tasks": [
+    {
+      "id": "M00",
+      "title": "Criar fundação reproduzível",
+      "owner": "coordenador",
+      "depends_on": [],
+      "status": "done",
+      "requirements": [],
+      "acceptance_tests": [],
+      "evidence": [
+        "docs/evidencias/MVP-local/RELATORIO.md"
+      ]
+    },
+    {
+      "id": "M01",
+      "title": "Banco, autenticação e autorização",
+      "owner": "backend",
+      "depends_on": [
+        "M00"
+      ],
+      "status": "done",
+      "requirements": [
+        "RF-01",
+        "RN-17"
+      ],
+      "acceptance_tests": [
+        "CT-01",
+        "CT-02",
+        "CT-14"
+      ],
+      "evidence": [
+        "docs/evidencias/MVP-local/RELATORIO.md"
+      ]
+    },
+    {
+      "id": "M02",
+      "title": "Configuração administrativa de produtos",
+      "owner": "backend",
+      "depends_on": [
+        "M01"
+      ],
+      "status": "done",
+      "requirements": [
+        "RF-05",
+        "RF-06",
+        "RF-16"
+      ],
+      "acceptance_tests": [
+        "CT-06",
+        "CT-14"
+      ],
+      "evidence": [
+        "docs/evidencias/MVP-local/RELATORIO.md"
+      ]
+    },
+    {
+      "id": "M03",
+      "title": "Agenda, disponibilidade e exceções",
+      "owner": "backend",
+      "depends_on": [
+        "M02"
+      ],
+      "status": "done",
+      "requirements": [
+        "RF-02",
+        "RF-03",
+        "RF-04",
+        "RF-07",
+        "RN-01",
+        "RN-02",
+        "RN-03",
+        "RN-04",
+        "RN-13",
+        "RN-14"
+      ],
+      "acceptance_tests": [
+        "CT-03",
+        "CT-04",
+        "CT-05"
+      ],
+      "evidence": [
+        "docs/evidencias/MVP-local/RELATORIO.md"
+      ]
+    },
+    {
+      "id": "M04",
+      "title": "Jornada de catálogo e carrinho",
+      "owner": "frontend",
+      "depends_on": [
+        "M03"
+      ],
+      "status": "done",
+      "requirements": [
+        "RF-01",
+        "RF-02",
+        "RF-05",
+        "RF-06",
+        "RF-07",
+        "RF-08"
+      ],
+      "acceptance_tests": [
+        "CT-01",
+        "CT-03",
+        "CT-04",
+        "CT-05",
+        "CT-06",
+        "CT-07",
+        "CT-16"
+      ],
+      "evidence": [
+        "docs/evidencias/MVP-local/RELATORIO.md"
+      ]
+    },
+    {
+      "id": "M05",
+      "title": "Reserva transacional e snapshot",
+      "owner": "backend",
+      "depends_on": [
+        "M03"
+      ],
+      "status": "done",
+      "requirements": [
+        "RF-08",
+        "RF-09",
+        "RF-11",
+        "RN-04",
+        "RN-05",
+        "RN-06",
+        "RN-07",
+        "RN-10",
+        "RN-11",
+        "RN-14"
+      ],
+      "acceptance_tests": [
+        "CT-07",
+        "CT-08",
+        "CT-09",
+        "CT-12",
+        "CT-13",
+        "CT-19"
+      ],
+      "evidence": [
+        "docs/evidencias/MVP-local/RELATORIO.md"
+      ]
+    },
+    {
+      "id": "M06",
+      "title": "Pagamento simulado e máquina de estados",
+      "owner": "pagamentos",
+      "depends_on": [
+        "M05"
+      ],
+      "status": "done",
+      "requirements": [
+        "RF-10",
+        "RF-11",
+        "RN-08",
+        "RN-09",
+        "RN-11",
+        "RN-12"
+      ],
+      "acceptance_tests": [
+        "CT-08",
+        "CT-09",
+        "CT-10",
+        "CT-11",
+        "CT-12",
+        "CT-13",
+        "CT-18",
+        "CT-19"
+      ],
+      "evidence": [
+        "docs/evidencias/MVP-local/RELATORIO.md"
+      ]
+    },
+    {
+      "id": "M07",
+      "title": "Selecionar e homologar gateway real",
+      "owner": "pagamentos",
+      "depends_on": [
+        "M06"
+      ],
+      "external_decisions": [
+        "D-02"
+      ],
+      "status": "blocked",
+      "requirements": [
+        "RF-10",
+        "RF-11",
+        "RN-08",
+        "RN-11",
+        "RN-12",
+        "RN-15"
+      ],
+      "acceptance_tests": [
+        "CT-10",
+        "CT-11",
+        "CT-18",
+        "CT-20"
+      ],
+      "evidence": [],
+      "blocker": "Usuário determinou pagamentos mockados; gateway/conta ainda não escolhidos. Discutir com o cliente conforme docs/PAUTA_CLIENTE.md."
+    },
+    {
+      "id": "M08",
+      "title": "Acompanhamento e confirmação do cliente",
+      "owner": "frontend",
+      "depends_on": [
+        "M04",
+        "M06"
+      ],
+      "status": "done",
+      "requirements": [
+        "RF-01",
+        "RF-12",
+        "RF-14"
+      ],
+      "acceptance_tests": [
+        "CT-11",
+        "CT-14",
+        "CT-15",
+        "CT-17"
+      ],
+      "evidence": [
+        "docs/evidencias/MVP-local/RELATORIO.md"
+      ]
+    },
+    {
+      "id": "M09",
+      "title": "Operação administrativa e cancelamentos",
+      "owner": "backend",
+      "depends_on": [
+        "M02",
+        "M06"
+      ],
+      "status": "done",
+      "requirements": [
+        "RF-13",
+        "RF-14",
+        "RF-15",
+        "RF-16",
+        "RN-15",
+        "RN-16"
+      ],
+      "acceptance_tests": [
+        "CT-12",
+        "CT-14",
+        "CT-17",
+        "CT-21"
+      ],
+      "evidence": [
+        "docs/evidencias/MVP-local/RELATORIO.md"
+      ]
+    },
+    {
+      "id": "M10",
+      "title": "Verificar regras críticas e jornada integrada local",
+      "owner": "qa",
+      "depends_on": [
+        "M06",
+        "M08",
+        "M09"
+      ],
+      "status": "done",
+      "requirements": [
+        "RF-01",
+        "RF-02",
+        "RF-03",
+        "RF-04",
+        "RF-05",
+        "RF-06",
+        "RF-07",
+        "RF-08",
+        "RF-09",
+        "RF-10",
+        "RF-11",
+        "RF-12",
+        "RF-13",
+        "RF-14",
+        "RF-15",
+        "RF-16"
+      ],
+      "acceptance_tests": [
+        "CT-01",
+        "CT-02",
+        "CT-03",
+        "CT-04",
+        "CT-05",
+        "CT-06",
+        "CT-07",
+        "CT-08",
+        "CT-09",
+        "CT-10",
+        "CT-11",
+        "CT-12",
+        "CT-13",
+        "CT-14",
+        "CT-15",
+        "CT-16",
+        "CT-17",
+        "CT-18",
+        "CT-19",
+        "CT-20",
+        "CT-21"
+      ],
+      "evidence": [
+        "docs/evidencias/MVP-local/RELATORIO.md"
+      ],
+      "notes": "Aceite local/fake. Sandbox/live e cenários externos continuam dependentes de M07."
+    },
+    {
+      "id": "M11",
+      "title": "Preparar release e operação",
+      "owner": "coordenador",
+      "depends_on": [
+        "M07",
+        "M10"
+      ],
+      "external_decisions": [
+        "D-01",
+        "D-02",
+        "D-03",
+        "D-04",
+        "D-05",
+        "D-06"
+      ],
+      "status": "todo",
+      "requirements": [
+        "RN-17"
+      ],
+      "acceptance_tests": [],
+      "evidence": [],
+      "notes": "Release comercial futuro. Publicação demonstrativa no Pages não satisfaz este aceite."
+    },
+    {
+      "id": "M12",
+      "title": "Executar piloto e entregar",
+      "owner": "coordenador",
+      "depends_on": [
+        "M11"
+      ],
+      "status": "todo",
+      "requirements": [],
+      "acceptance_tests": [],
+      "evidence": []
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+# Dependências e builds futuros
+node_modules/
+.next/
+dist/
+coverage/
+playwright-report/
+test-results/
+
+# Segredos e ambiente local
+.env
+.env.*
+!.env.example
+supabase/.temp/
+
+# Temporários de inspeção
+tmp/
+__pycache__/
+*.pyc
+.cache/
+.pnpm-store/
+.local/
+*.tsbuildinfo
