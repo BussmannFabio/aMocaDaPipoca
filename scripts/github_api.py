@@ -6,6 +6,9 @@ import sys
 import urllib.error
 import urllib.request
 
+sys.stdout.reconfigure(encoding='utf-8')
+sys.stderr.reconfigure(encoding='utf-8')
+
 REPO = 'BussmannFabio/aMocaDaPipoca'
 
 def token():

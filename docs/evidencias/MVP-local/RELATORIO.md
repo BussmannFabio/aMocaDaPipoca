@@ -52,3 +52,11 @@ As falhas intermediárias de fixtures de data, labels acessíveis, consulta admi
 ## Segurança do repositório
 
 `.env.local`, `.local`, caches, node_modules e resultados transitórios estão ignorados. Credenciais geradas e acesso do Git Credential Manager não fazem parte do código nem do bundle público. Os acessos publicados são fictícios e exclusivamente demonstrativos.
+
+## Publicação verificada
+
+- Código enviado a `BussmannFabio/aMocaDaPipoca`, branch main, commit de implementação `f318dea00bbcadb0c2682eb8a0f79ebe742152dc`.
+- [Publicação no Pages concluída com sucesso](https://github.com/BussmannFabio/aMocaDaPipoca/actions/runs/41642815721).
+- [CI do commit aprovado](https://github.com/BussmannFabio/aMocaDaPipoca/actions/runs/41642815714).
+- [Protótipo público](https://bussmannfabio.github.io/aMocaDaPipoca/): 2 testes de navegador repetidos e aprovados contra a URL publicada, incluindo conta de cliente/admin, pedido e cancelamento/reembolso mockado.
+- Runtime local mantido em `http://127.0.0.1:3000`, com PostgreSQL e modo fake. As credenciais de demonstração são as do roteiro.

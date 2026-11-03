@@ -4,7 +4,7 @@ MVP 1 local de produtos para retirada agendada, com pagamentos **mockados**, con
 
 ## Abrir e explorar
 
-Protótipo estático preparado para publicação em `https://bussmannfabio.github.io/aMocaDaPipoca/`. O [roteiro rápido](docs/ROTEIRO_PROTOTIPO.md) descreve as contas, telas e evolução.
+[Abrir protótipo publicado no GitHub Pages](https://bussmannfabio.github.io/aMocaDaPipoca/). O [roteiro rápido](docs/ROTEIRO_PROTOTIPO.md) descreve as contas, telas e evolução.
 
 [Abrir catálogo público](http://127.0.0.1:3000/encomendar) · [Início](http://127.0.0.1:3000/) · [Administração](http://127.0.0.1:3000/admin)
 

@@ -2,7 +2,7 @@
 
 ## Acesso
 
-- Pages: `https://bussmannfabio.github.io/aMocaDaPipoca/` (endereço de publicação configurado).
+- [Abrir protótipo no Pages](https://bussmannfabio.github.io/aMocaDaPipoca/).
 - Local: [abrir catálogo](http://127.0.0.1:3000/encomendar).
 - **Cliente:** `cliente@pipoca.local` · **Admin:** `admin@pipoca.local`.
 - **Senha dos dois:** `Pipoca@123`. Para trocar de perfil, use **Sair da conta**.
