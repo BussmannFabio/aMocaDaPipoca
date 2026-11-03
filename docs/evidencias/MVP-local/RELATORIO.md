@@ -53,6 +53,11 @@ As falhas intermediárias de fixtures de data, labels acessíveis, consulta admi
 
 `.env.local`, `.local`, caches, node_modules e resultados transitórios estão ignorados. Credenciais geradas e acesso do Git Credential Manager não fazem parte do código nem do bundle público. Os acessos publicados são fictícios e exclusivamente demonstrativos.
 
+## Atualização do guia no header
+
+Ícone discreto ? acessível sem login e sem abrir o menu mobile. O diálogo apresenta e-mails/senha fictícios, cópia de acesso, percurso do cliente/admin, tecnologias separadas entre Pages e runtime local e Mercado Pago/Asaas/Stripe como opções futuras, com documentação oficial.
+Verificados abertura/fechamento, Escape e retorno de foco, clipboard, conteúdo, links e largura em 360 px. A suíte Pages passou com 4 testes, incluindo a jornada de compra/administração existente. Capturas: ajuda-mobile.png e ajuda-pagamentos-desktop.png. Pagamentos continuam mockados.
+
 ## Publicação verificada
 
 - Código enviado a `BussmannFabio/aMocaDaPipoca`, branch main, commit de implementação `f318dea00bbcadb0c2682eb8a0f79ebe742152dc`.

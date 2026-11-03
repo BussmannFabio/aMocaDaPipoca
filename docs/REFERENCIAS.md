@@ -40,3 +40,11 @@ Não foram levantados preços, planos comerciais ou garantias de terceiros; cust
 - [PostgreSQL · RLS](https://www.postgresql.org/docs/current/ddl-rowsecurity.html): isolamento por papel e usuário.
 - [GitHub · Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages): hospedagem estática da demonstração.
 - [Vite · Deploy no Pages](https://vite.dev/guide/static-deploy.html#github-pages): base do repositório e workflow de publicação.
+
+## Opções de pagamento apresentadas no guia
+
+Consultadas em 03/11/2026, apenas para explicar possibilidades de integração futura; nenhum gateway foi escolhido ou integrado:
+
+- [Mercado Pago · Checkout Pro](https://www.mercadopago.com.br/developers/pt/docs/checkout-pro/overview).
+- [Asaas · Checkout](https://docs.asaas.com/docs/checkout-asaas).
+- [Stripe · Pix](https://docs.stripe.com/payments/pix), sujeito à disponibilidade e habilitação da conta.

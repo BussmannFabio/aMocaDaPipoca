@@ -4,6 +4,8 @@ Registrada por orientação explícita do usuário em 03/11/2026: a empresa aind
 
 ## 1. Gateway e recebimento
 
+O guia **?** do protótipo apresenta Mercado Pago, Asaas e Stripe como possibilidades de avaliação, com links para a documentação oficial. Nenhum deles foi escolhido ou integrado; pagamentos continuam mockados.
+
 - Qual provedor usar para Pix e cartão? Comparar taxas, prazo de recebimento e suporte.
 - A conta ficará no nome/CNPJ da empresa? Quem terá acesso administrativo?
 - O provedor oferece sandbox, notificações assinadas, consulta de transações, idempotência e reembolso?

@@ -1,4 +1,48 @@
 import { test, expect } from '@playwright/test';
+test('Ajuda: acessos fictícios, cópia, roteiro, tecnologias e opções de pagamento', async ({ page, context }) => {
+  await page.goto('./');
+  await context.grantPermissions(['clipboard-read', 'clipboard-write']);
+  const trigger = page.getByRole('button', { name: 'Como usar este protótipo', exact: true });
+  await trigger.click();
+  const dialog = page.getByRole('dialog', { name: 'Como usar este protótipo' });
+  await expect(dialog).toBeVisible();
+  await expect(dialog.getByText('cliente@pipoca.local', { exact: true })).toBeVisible();
+  await expect(dialog.getByText('admin@pipoca.local', { exact: true })).toBeVisible();
+  await expect(dialog.getByText('Pipoca@123', { exact: true })).toBeVisible();
+  await expect(dialog.getByText(/Só aqui pedimos login/)).toBeVisible();
+  await dialog.getByRole('button', { name: 'Copiar acesso de cliente' }).click();
+  await expect(dialog.getByRole('status')).toHaveText('Acesso de cliente copiado.');
+  expect((await page.evaluate(() => navigator.clipboard.readText())).replace(/\r\n/g, '\n')).toBe('E-mail: cliente@pipoca.local\nSenha: Pipoca@123');
+  await dialog.getByRole('button', { name: 'Tecnologias', exact: true }).click();
+  for (const name of ['React', 'TypeScript', 'Next.js', 'PostgreSQL', 'Vite', 'GitHub Pages']) await expect(dialog.getByText(name, { exact: true })).toBeVisible();
+  await dialog.getByRole('button', { name: 'Pagamentos', exact: true }).click();
+  await expect(dialog.getByText(/Nenhum gateway foi contratado ou integrado/)).toBeVisible();
+  await expect(dialog.getByRole('link', { name: /Mercado Pago/ })).toHaveAttribute('href', 'https://www.mercadopago.com.br/developers/pt/docs/checkout-pro/overview');
+  await expect(dialog.getByRole('link', { name: /Asaas/ })).toBeVisible();
+  await expect(dialog.getByRole('link', { name: /Stripe/ })).toBeVisible();
+  await page.screenshot({ path: 'docs/evidencias/MVP-local/ajuda-pagamentos-desktop.png', fullPage: true });
+  await page.keyboard.press('Escape');
+  await expect(dialog).not.toBeVisible();
+  await expect(trigger).toBeFocused();
+});
+
+test('Ajuda: ícone disponível sem abrir menu e diálogo acessível no celular', async ({ page }) => {
+  await page.setViewportSize({ width: 360, height: 800 });
+  await page.goto('./#/encomendar');
+  await page.getByRole('button', { name: 'Como usar este protótipo', exact: true }).click();
+  const dialog = page.getByRole('dialog');
+  await expect(dialog).toBeVisible();
+  const box = await dialog.boundingBox();
+  expect(box!.x).toBeGreaterThanOrEqual(0);
+  expect(box!.x + box!.width).toBeLessThanOrEqual(360);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
+  await dialog.getByRole('button', { name: 'Tecnologias', exact: true }).click();
+  await expect(dialog.getByText('PostgreSQL', { exact: true })).toBeVisible();
+  await page.screenshot({ path: 'docs/evidencias/MVP-local/ajuda-mobile.png', fullPage: true });
+  await dialog.getByRole('button', { name: 'Fechar', exact: true }).click();
+  await expect(dialog).not.toBeVisible();
+});
+
 test('Pages: catálogo público, login ao personalizar, pedido, admin e cancelamento', async ({ page }) => {
   const errors: string[] = []; page.on('pageerror', e => errors.push(e.message));
   await page.goto('./#/encomendar');

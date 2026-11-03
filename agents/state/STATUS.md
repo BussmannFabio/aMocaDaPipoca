@@ -8,6 +8,7 @@ Atualizado em 03/11/2026.
 - M00–M06 e M08–M10 concluídas no escopo local. M07 bloqueada por ausência de gateway e orientação explícita de manter mocks; M11/M12 comerciais futuras.
 - Próximo passo comercial: discutir gateway/conta com o cliente, usando `docs/PAUTA_CLIENTE.md`. Não integrar ou receber dinheiro real por conta própria.
 - Contas demonstrativas e roteiro em `docs/ROTEIRO_PROTOTIPO.md` e README.md.
+- Guia interno no ícone ? do header: acessos fictícios com cópia, roteiro, tecnologias por ambiente e opções de gateway a avaliar. Disponível também no celular.
 - Decisões comerciais/contas pendentes em `docs/DECISOES.md`; não impedem explorar o protótipo.
 - Agentes: arquivos preparados; descoberta nativa em uma nova sessão ainda precisa ser verificada. Nenhum subagente foi iniciado para esta entrega.
 - Verificações: 7 unitários, 18 integrações PostgreSQL e 10 E2E locais aprovados. Testes da versão Pages e publicação são registrados em `docs/evidencias/MVP-local/RELATORIO.md`.

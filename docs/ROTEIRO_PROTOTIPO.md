@@ -2,6 +2,8 @@
 
 ## Acesso
 
+O ícone **?** no header abre o guia dentro do protótipo: acessos fictícios com cópia, roteiro de uso, tecnologias e gateways a avaliar. Funciona também no celular, sem abrir o menu.
+
 - [Abrir protótipo no Pages](https://bussmannfabio.github.io/aMocaDaPipoca/).
 - Local: [abrir catálogo](http://127.0.0.1:3000/encomendar).
 - **Cliente:** `cliente@pipoca.local` · **Admin:** `admin@pipoca.local`.

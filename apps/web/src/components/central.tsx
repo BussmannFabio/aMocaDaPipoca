@@ -9,6 +9,7 @@ import { Field, Loading, Logo, Notice } from './ui';
 import Shop from './shop';
 import { OrderDetail, Orders, Simulator } from './orders';
 import Admin from './admin';
+import PrototypeHelp from './prototype-help';
 
 export default function Central() {
   const pathname = usePathname();
@@ -38,12 +39,12 @@ export default function Central() {
   else content = <main className="container page-head"><h1>Este caminho não está no nosso cardápio.</h1><Link href="/">Voltar ao início</Link></main>;
   return <>
     <div className="announcement"><Sparkles size={13} /><span>Feita com carinho. Encomendada para o seu momento.</span><span className="local-label">{isStaticDemo ? 'DEMONSTRAÇÃO PÚBLICA · DADOS FICTÍCIOS' : 'AMBIENTE LOCAL · SEM COBRANÇAS REAIS'}</span></div>
-    <header className="site-header"><div className="header-inner"><Link href="/" aria-label="A Moça da Pipoca, início"><Logo /></Link><button className="icon-button mobile-toggle" aria-label="Abrir menu" onClick={() => setMobileMenu(!mobileMenu)}>{mobileMenu ? <X /> : <Menu />}</button><nav className={mobileMenu ? 'nav-links nav-open' : 'nav-links'} aria-label="Navegação principal" onClick={() => setMobileMenu(false)}>
+    <header className="site-header"><div className="header-inner"><Link href="/" aria-label="A Moça da Pipoca, início"><Logo /></Link><div className="header-actions"><nav className={mobileMenu ? 'nav-links nav-open' : 'nav-links'} aria-label="Navegação principal" onClick={() => setMobileMenu(false)}>
       <Link className={pathname === '/encomendar' ? 'active' : ''} href="/encomendar">Fazer encomenda</Link>
       {user && <Link className={pathname.startsWith('/pedidos') ? 'active' : ''} href="/pedidos">Meus pedidos</Link>}
       {user?.role === 'admin' && <Link className={admin ? 'active' : ''} href="/admin">Administração</Link>}
       {user ? <><Link className="account-link" href="/conta"><UserRound size={17} /><span>{user.name.split(' ')[0]}</span></Link><button className="icon-button" onClick={signOut} aria-label="Sair da conta"><LogOut size={17} /></button></> : <Link className="button button-small" href="/entrar">Minha conta <ArrowRight size={16} /></Link>}
-    </nav></div></header>
+    </nav><PrototypeHelp /><button className="icon-button mobile-toggle" aria-label="Abrir menu" onClick={() => setMobileMenu(!mobileMenu)}>{mobileMenu ? <X /> : <Menu />}</button></div></div></header>
     {isStaticDemo && <div className="public-demo-banner">Protótipo de demonstração: use apenas dados e senhas fictícios. Pagamentos simulados; alterações ficam neste navegador.</div>}
     {content}
     <footer className="site-footer"><div className="container footer-inner"><Logo /><p>Pequenos sabores.<br /><span>Grandes momentos.</span></p><div><Link href="/privacidade">Privacidade e uso de dados</Link><small>© {new Date().getFullYear()} A Moça da Pipoca · Protótipo</small></div><Heart size={21} strokeWidth={1.2} /></div></footer>
